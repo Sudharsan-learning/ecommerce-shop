@@ -20,7 +20,9 @@ function Cart() {
   };
 
   const increaseQuantityHandler = (id) => dispatch(increaseQuantity(id));
-  const decreaseQuantityHandler = (id) => dispatch(decreaseQuantity(id));
+  const decreaseQuantityHandler = (id) => {
+    dispatch(decreaseQuantity(id));
+  };
 
   const totalAmount = products.reduce((total, product) => {
     return total + product.discounted_price * product.quantity;
